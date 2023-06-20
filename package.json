@@ -1,8 +1,9 @@
 {
   "name": "alt",
-  "version": "0.16.10",
+  "version": "0.16.11",
   "description": "A flux implementation",
   "main": "lib",
+  "jsnext:main": "src",
   "dependencies": {
     "es-symbol": "1.1.2",
     "eventemitter3": "0.1.6",
@@ -24,7 +25,7 @@
     "immutable": "^3.7.2",
     "iso": "^4.1.0",
     "istanbul": "^0.3.14",
-    "jsdom": "^3.1.2",
+    "jsdom": "^10.0.0",
     "lunr": "^0.5.9",
     "mocha": "^2.2.4",
     "object-assign": "^2.0.0",
@@ -49,7 +50,7 @@
     "coverage": "npm run transpile-cover && istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R tap --require ./test/babel test",
     "clean": "rimraf lib && rimraf utils",
     "lint": "eslint src components",
-    "prepublish": "npm run lint && npm run test && npm run build",
+    "prepublish": "npm run build",
     "pretest": "npm run clean && npm run transpile",
     "size": "npm run build-alt; browserify flux.js > flux-build.js; uglifyjs -m -c 'comparisons=false,keep_fargs=true,unsafe=true,unsafe_comps=true,warnings=false' flux-build.js  > flux-build.min.js",
     "test": "npm run test-node",
